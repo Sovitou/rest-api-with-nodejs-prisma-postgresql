@@ -4,9 +4,6 @@ const prisma = new PrismaClient();
 
 export const createCategory = async (req, res) => {
   try {
-    if (!req.body.name)
-      return res.status(422).json({ error: "Name is required" });
-
     if (await prisma.category.findUnique({ where: { name: req.body.name } })) {
       return res.status(409).json({ error: `${req.body.name} already exited` });
     }
@@ -57,9 +54,6 @@ export const updateCategory = async (req, res) => {
 
     if (!findCategoryId)
       return res.status(404).json({ error: ` Category id not found` });
-
-    if (!req.body.name)
-      return res.status(422).json({ error: "Name is required" });
 
     if (await prisma.category.findUnique({ where: { name: req.body.name } })) {
       return res.status(409).json({ error: `${req.body.name} already exited` });
