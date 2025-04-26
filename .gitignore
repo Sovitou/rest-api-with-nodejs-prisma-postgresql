@@ -1,0 +1,21 @@
+.env
+node_modules/
+# Prisma
+/prisma/dev.db
+/prisma/dev.db-journal
+/prisma/*.sqlite
+/prisma/migrations/*
+!.prisma/migrations/*.sql  # Optional: keep SQL files, ignore other artifacts
+
+# Prisma generated client
+/node_modules/
+/prisma/node_modules/
+/prisma/generated/
+
+# Environment variables
+.env
+.env.*
+# Prisma generated client
+
+generated/prisma 
+
