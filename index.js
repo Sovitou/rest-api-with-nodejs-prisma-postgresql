@@ -24,6 +24,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use("/", (req, res) => {
+  res.send("Welcome to my API ");
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/products", productRoutes);
