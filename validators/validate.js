@@ -7,7 +7,7 @@ export const validate = (schema) => {
       return res.status(422).json({ errors });
     }
 
-    req.body = value; // sanitized validated value
+    req.body = value;
     next();
   };
 };
