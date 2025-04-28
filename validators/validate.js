@@ -8,6 +8,6 @@ export const validate = (schema) => {
     }
 
     req.body = value; // sanitized validated value
-    next(); // continue to controller
+    next();
   };
 };

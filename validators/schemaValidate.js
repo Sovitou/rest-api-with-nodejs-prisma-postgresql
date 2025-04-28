@@ -16,3 +16,9 @@ export const productSchema = Joi.object({
   quantity: Joi.number().integer().required().min(0),
   categoryId: Joi.number().integer().required(),
 });
+
+export const userSchema = Joi.object({
+  name: Joi.string().required().max(120),
+  email: Joi.string().email().required(),
+  password: Joi.string().pattern(new RegExp("^[a-zA-Z0-9]{3,30}$")),
+});
